@@ -1,14 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Home Page";
 ---
 
-<body>
-	<head>
-		<meta charset="UTF-8" />
-	</head>
-	<a href="/">ホーム</a>
-	<a href="/about/">概要</a>
-	<h1>私について</h1>
-</body>
-<style></style>
+<BaseLayout pageTitle={pageTitle}>
+	<h2>私の素晴らしいブログのサブタイトル</h2>
+</BaseLayout>
