@@ -59,7 +59,7 @@ h1 {
         background: none;
     }
 
-    .nav-links a {
+    .nav-links {
         display: inline-block;
         padding: 15px 20px;
     }
