@@ -1,19 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "About Me";
-const happy = true;
-const finished = true;
+const pageTitle = "私について";
+const happy = false;
+const finished = false;
 const goal = 3;
 
 const identity = {
-    firstName: "Sarah",
-    country: "Canada",
-    occupation: "Technical Writer",
-    hobbies: ["photography", "birdwatching", "baseball"],
+    firstName: "小松",
+    country: "日本",
+    occupation: "フリーター",
+    hobbies: ["ギターを弾くこと", "野球をすること"],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro"];
 
 const skillColor = "navy";
 const fontWeight = "bold";
@@ -33,46 +33,33 @@ const textCase = "uppercase";
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
-    <h2>... and my new Astro site!</h2>
+    <h2>自己紹介</h2>
 
-    <p>
-        I am working through Astro's introductory tutorial. This is the second
-        page on my website, and it's the first one I built myself!
-    </p>
-
-    <p>
-        This site will update as I complete more of the tutorial, so keep
-        checking back and see how my journey is going!
-    </p>
+    <p>プログラミング学習中の男。</p>
 
     {happy && <p>I am happy to be learning Astro!</p>}
 
     {finished && <p>I finished this tutorial!</p>}
 
-    {
-        goal === 3 ? (
-            <p>My goal is to finish in 3 days.</p>
-        ) : (
-            <p>My goal is not 3 days.</p>
-        )
-    }
+    {goal === 3 ? <p>３ヶ月後に就職しようとしています。</p> : <p>マジです。</p>}
 
-    <p>Here are a few facts about me:</p>
+    <p>詳細です。</p>
     <ul>
-        <li>My name is {identity.firstName}.</li>
+        <li>私の名前は{identity.firstName}です。</li>
         <li>
-            I live in {identity.country} and I work as a {identity.occupation}.
+            私は{identity.country}に住んでいます。 {
+                identity.occupation
+            }で生計を立てています。
         </li>
         {
             identity.hobbies.length >= 2 && (
                 <li>
-                    Two of my hobbies are: {identity.hobbies[0]} and{" "}
-                    {identity.hobbies[1]}
+                    趣味は{identity.hobbies[0]}と{identity.hobbies[1]}です。
                 </li>
             )
         }
     </ul>
-    <p>My skills are:</p><p></p><ul>
+    <p>使える技術:</p><p></p><ul>
         {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
 </BaseLayout>

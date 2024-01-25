@@ -35,7 +35,7 @@ const filteredPosts = posts.filter((post) =>
 ---
 
 <BaseLayout pageTitle={tag}>
-    <p>Posts tagged with {tag}</p>
+    <p>{tag}の記事一覧</p>
     <ul>
         {
             filteredPosts.map((post) => (
